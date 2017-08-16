@@ -1,0 +1,5 @@
+*.class
+target
+application.log
+.g8
+RUNNING_PID

@@ -1,23 +1,30 @@
 package models;
 
-import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.NonNull;
+import lombok.RequiredArgsConstructor;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
+
+import static javax.persistence.CascadeType.ALL;
 
 @Entity
 @NoArgsConstructor
-@AllArgsConstructor
-public class Customer
-{
-    @Id
-    @GeneratedValue(strategy= GenerationType.AUTO)
-    public Long id;
+@Data
+@RequiredArgsConstructor
+public class Customer {
 
-    private String firstName, lastName;
+    @Id
+    @NonNull
+    private Long id;
+
+    @NonNull
+    private String firstName;
+
+    @NonNull
+    private String lastName;
+
+    @OneToOne(cascade = ALL)
+    private Account account;
 }

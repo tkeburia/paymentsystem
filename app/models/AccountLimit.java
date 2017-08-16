@@ -1,7 +1,6 @@
 package models;
 
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
-import enums.Currency;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.NonNull;
@@ -18,16 +17,24 @@ import java.math.BigDecimal;
 @NoArgsConstructor
 @Data
 @RequiredArgsConstructor
-public class Balance {
+public class AccountLimit {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
 
-    @NonNull
-    private Currency currency;
+    private boolean limitReached;
 
     @NonNull
     @JsonSerialize(using = AmountSerializer.class)
-    private BigDecimal amount;
+    private BigDecimal transferLimit;
+
+    @NonNull
+    @JsonSerialize(using = AmountSerializer.class)
+    private BigDecimal transferredToday;
+
+    public void increaseTransferredToday(BigDecimal amount) {
+        this.transferredToday = this.transferredToday.add(amount);
+        if (transferredToday.compareTo(transferLimit) >= 0) limitReached = true;
+    }
 }

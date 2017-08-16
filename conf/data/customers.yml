@@ -1,0 +1,89 @@
+customers:
+  - firstName: Lois
+    lastName: Griffin
+    id: 100001
+    account:
+      balances:
+        - currency: GBP
+          amount: 100
+        - currency: USD
+          amount: 100
+        - currency: EUR
+          amount: 100
+      allowedOverdraft: 100
+      usedOverdraft: 0
+      locked: false
+      accountLimit:
+        limitReached: false
+        transferLimit: 400
+        transferredToday: 0
+  - firstName: Peter
+    lastName: Griffin
+    id: 100002
+    account:
+      balances:
+        - currency: GBP
+          amount: 100
+        - currency: USD
+          amount: 100
+        - currency: EUR
+          amount: 100
+      allowedOverdraft: 1000
+      usedOverdraft: 0
+      locked: false
+      accountLimit:
+        limitReached: false
+        transferLimit: 2000
+        transferredToday: 0
+  - firstName: Stan
+    lastName: Smith
+    id: 100003
+    account:
+      balances:
+        - currency: USD
+          amount: 0
+        - currency: EUR
+          amount: 100
+      allowedOverdraft: 0
+      usedOverdraft: 0
+      locked: false
+      accountLimit:
+        limitReached: true
+        transferLimit: 100
+        transferredToday: 100
+  - firstName: Homer
+    lastName: Simpson
+    id: 100004
+    account:
+      balances:
+        - currency: GBP
+          amount: 100
+        - currency: USD
+          amount: 100
+        - currency: EUR
+          amount: 100
+      allowedOverdraft: 0
+      usedOverdraft: 0
+      locked: true
+      accountLimit:
+        limitReached: false
+        transferLimit: 2000
+        transferredToday: 0
+  - firstName: Marge
+    lastName: Simpson
+    id: 100005
+    account:
+      balances:
+        - currency: GBP
+          amount: 100
+        - currency: USD
+          amount: 100
+        - currency: EUR
+          amount: 100
+      allowedOverdraft: 0
+      usedOverdraft: 0
+      locked: false
+      accountLimit:
+        limitReached: false
+        transferLimit: 100
+        transferredToday: 0
