@@ -114,16 +114,16 @@ The funds will come out of the account in the following order:
     }
 ```
 
-#####Scenario 1:
+##### Scenario 1:
 Sending 5 GBP - this will take 5 GBP from the GBP balance leaving 95 GBP and all other balances unchanged
-#####Scenario 2:
+##### Scenario 2:
 Sending 105 GBP - this will take 100 GBP (max amount) from the GBP balance and then 5 from overdraft, leaving 0 GBP, and 95 available overdraft
-#####Scenario 3:
+##### Scenario 3:
 Sending 205 GBP - this will take 100 GBP, use 100 from overdraft and take equivalent of 5 GBP from the USD balance, since this application is configured of 1 to 1 exchange rate for all currencies, this will leave 0 on GBP, 0 overdraft left and 95 USD
 
 For simplicity, the overdraft is applied to the requested currency only.
 
-##Future improvements
+## Future improvements
 - make transfers and checks part of the same transaction, current flow checks the transfer is possible and then proceeds to complete it. If another operation altered the account in between these two operations, there will be problems.
 - make the api responses contain relevant information if different currency was used and converted to complete the request
 - implement configurable priority of currencies so that the order in which other currencies are used is dynamic
